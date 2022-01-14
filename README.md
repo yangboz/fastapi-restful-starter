@@ -10,7 +10,5 @@ pip install -r requirements.txt
 uvicorn application.server.main:app
 ```
 ```
-docker run -p 80:80 smartkit
-/
-fastapi-restful-starter
+docker run -p 80:80 smartkit/fastapi-restful-starter
 ```
