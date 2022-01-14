@@ -7,7 +7,7 @@ click==8.0.3
 contextlib2==21.6.0
 contextvars==2.4
 cookiecutter==1.7.2
-dataclasses==0.8
+dataclasses
 dm-tree==0.1.6
 fastapi==0.71.0
 h11==0.12.0
