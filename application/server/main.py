@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from starlette.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 
 
@@ -12,6 +13,22 @@ app_desc = """<h2>Try this app by demostrating[a,b,c,d,e] data and index  for `a
 app = FastAPI(title='restful FastAPI Starter Pack', description=app_desc)
 
 app.data = ['a','b','c','d']
+
+origins = [
+    "http://localhost.tiangolo.com",
+    "https://localhost.tiangolo.com",
+    "http://localhost",
+    "http://localhost:8080",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 
 @app.get("/", include_in_schema=False)
